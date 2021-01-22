@@ -1,0 +1,21 @@
+.PullRequests {
+  margin: 0 30px;
+  display: block;
+}
+
+  
+.PullRequests span {
+  padding: 0 15px;
+}
+
+.Box{
+    display: flex;
+}
+.Right {
+  text-align: right;
+}
+
+.Vertical {
+    display: block;
+    padding-right: 15px;
+}

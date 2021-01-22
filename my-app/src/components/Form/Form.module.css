@@ -1,0 +1,9 @@
+.Form {
+    padding: 15px 5px;
+    margin: 5px 5px;
+    display: block;
+}
+
+.Form div{
+    padding: 10px 10px;
+}
