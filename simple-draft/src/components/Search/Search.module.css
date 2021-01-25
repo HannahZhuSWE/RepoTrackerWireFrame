@@ -1,0 +1,11 @@
+.Search {
+    padding: 15px 5px;
+    margin: 5px 5px;
+    margin-bottom: 20px;
+    display: flex;
+    font-size: larger;
+}
+
+.Search div{
+    padding: 10px 10px;
+}

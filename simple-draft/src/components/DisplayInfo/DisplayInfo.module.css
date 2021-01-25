@@ -1,0 +1,18 @@
+.DisplayInfo{
+    display: flex;
+    margin: 20px 20px;
+}
+
+.DisplayInfo div{
+    display: block;
+    margin: 10px 0px;
+    margin-right: 100px;
+}
+
+.DisplayInfo ul{
+    list-style-type: none;
+}
+
+.Right {
+    text-align: right;
+}
