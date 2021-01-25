@@ -2,3 +2,10 @@
     margin: 100px 20px;
     padding: 10px;
 }
+.Content footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}

@@ -33,6 +33,11 @@ const Layout = (props) =>{
                     search={searchHandler}
                 />
             </main>
+            <footer>
+                <p>This page is powered by the Repo Tracker Tool, maintained by Mike Jacobs @
+                    <a href=""> www.aka.ms/repotracker</a>
+                </p>
+            </footer>
         </Aux>
     );
 }
