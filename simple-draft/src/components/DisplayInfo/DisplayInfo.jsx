@@ -1,10 +1,16 @@
 import React from 'react';
 import Aux from '../../hoc/Auxilary/Auxilary';
 import classes from './DisplayInfo.module.css'
+
+//displays the info of the article and/or repo if there is info to display, 
+//otherwise displays a message to the user asking for a github url
 const displayInfo = (props) =>{
+    //path to json file containing the article metadata
     const articleData = require("../../assets/data/articleData.json");
+    //path to json file containing the repo metadata
     const repoData = require("../../assets/data/repoData.json");
-    let results = null;
+
+    let results = <p>Please enter the github link of an article or repo in the search field above.</p>;
 
     if(props.show){
         results = (

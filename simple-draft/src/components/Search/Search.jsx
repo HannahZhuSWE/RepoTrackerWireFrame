@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './Search.module.css';
 import Field from '../UI/Field/Field';
+
+//search field and button for entering the github url of an article/repo
 const search = (props) =>{
     return (
             <div className={classes.Search}>

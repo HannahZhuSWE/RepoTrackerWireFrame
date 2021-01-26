@@ -1,6 +1,7 @@
 import React from 'react';
 import Aux from '../../../hoc/Auxilary/Auxilary';
 
+//input field that can also display a label 
 const field = (props) =>{
     const capitalized = props.name.charAt(0).toUpperCase()+props.name.slice(1);
     return (

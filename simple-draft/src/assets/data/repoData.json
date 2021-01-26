@@ -1,4 +1,11 @@
 {
     "m1": "m1",
-    "m2": "m2" 
+    "m2": "m2",
+    "businessApprovers": "person 1",
+    "org" : "org name",
+    "publicPrivate" :"public",
+    "repoArea" : "area name",
+    "productInfo": "some info here",
+    "buildMaster" : "02/01/2021",
+    "buildLive" : "02/01/2021"
 }

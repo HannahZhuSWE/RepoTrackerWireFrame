@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import { createStore, combineReducers } from 'redux';
+
 import './index.css';
-import App from './containers/App';
+import App from './containers/App/App';
 import reportWebVitals from './reportWebVitals';
+import loginReducer from './store/reducers/loginReducer';
+import displayResultsReducer from './store/reducers/displayResultsReducer';
+
+//combine login reducer logic with display reducer logic
+const rootReducer = combineReducers({
+  login: loginReducer,
+  displayResults: displayResultsReducer
+});
+
+const store = createStore(rootReducer);
 
 ReactDOM.render(
+  
   <React.StrictMode>
+    <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
