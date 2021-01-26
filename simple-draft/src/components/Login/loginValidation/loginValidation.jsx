@@ -2,10 +2,10 @@
 //current only checks to see that both username and password are filled out 
 const loginValidation = (username, password) =>{
     if(username !== '' && password !== ''){
-        return false;
+        return true;
     }
     else{
-        return true;
+        return false;
     }
 }
 

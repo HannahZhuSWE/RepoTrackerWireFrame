@@ -11,7 +11,7 @@ import * as actionType from '../../store/actions';
 
 //gives the basic layout of the page
 //keeps track of the value in the search bar and whether or not the login page should appear
-const Layout = (props) =>{
+export const Layout = (props) =>{
     const [searchValue, setSearchValue] = useState('');
     const [loginPage, setLoginPage] = useState(false);
 

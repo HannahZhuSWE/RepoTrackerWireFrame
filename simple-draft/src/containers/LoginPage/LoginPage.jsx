@@ -10,7 +10,7 @@ import * as actionType from '../../store/actions';
 
 //displays a login page when the user clicks the log in button and removes it when the user logins in or clicks elsewhere
 //keeps track of the username and password entered in the text fields and if there's an error with any of the fields
-const LoginPage = (props) =>{
+export const LoginPage = (props) =>{
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
@@ -25,8 +25,8 @@ const LoginPage = (props) =>{
     //will update state of id and authentication in the store
     const loginHandler = () =>{
         const result = loginValidation(username,password);
-        setError(result);
-        if(!result){
+        setError(!result);
+        if(result){
             props.onLogin(username);
             closeLoginHandler();
         }
