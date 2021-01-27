@@ -11,8 +11,19 @@ describe('<DisplayInfo />', ()=>{
     beforeEach(() =>{
         wrapper = shallow(<DisplayInfo />);
     });
-    //if props.show is false it should only render one paragraph
-    //if props.show is true it should render the Aux component with two lists inside
+    
+    //if props.show is false it should render no lists
+    it('should render no lists when props.show is false', () => {
+        expect(wrapper.find('ul')).toHaveLength(0);
+    });
+
+    //if props.show is true it should render two lists 
+    it('should render two lists when props.show is true', () => {
+        wrapper.setProps({show : true});
+        expect(wrapper.find('ul')).toHaveLength(2);
+
+    });
+
     //might be implemented later: if given a repo will only output one list, if given an article will output 2
 
 });

@@ -8,10 +8,20 @@ configure({adapter: new Adapter()});
 describe('<Field />', ()=>{
     let wrapper;
     beforeEach(() =>{
-        wrapper = shallow(<Field />);
+        wrapper = shallow(<Field name=""/>);
     });
-    //should return a field
-    //should return a label when label is true
-    //should not return a label when label is false
+
+    //should return a label when props.label is true
+    it('should render backdrop when props.label is true', () => {
+        wrapper.setProps({label : true});
+        expect(wrapper.find('label')).toHaveLength(1);
+
+    });
+
+    //should not return a label when props.label is false
+    it('should render backdrop when props.label is false', () => {
+        expect(wrapper.find('label')).toHaveLength(0);
+
+    });
 });
 
