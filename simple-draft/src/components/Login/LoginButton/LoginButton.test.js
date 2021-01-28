@@ -1,6 +1,6 @@
 import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
-import {configure, shallow} from 'enzyme';
+import {configure, mount, shallow} from 'enzyme';
 import LoginButton from './LoginButton';
 
 configure({adapter: new Adapter()});
@@ -24,11 +24,11 @@ describe('<LoginButton />', ()=>{
     })
 
     //calls props.clicked when button is clicked
-    it('should call prop.clicked when the button is pressed', () =>{
+    it('should call props.clicked when the button is pressed', () =>{
         const mockCallback = jest.fn();
-        wrapper = shallow(<LoginButton clicked={mockCallback} />);
-        const button = wrapper.closest('button');
-        button.onClick();
+        wrapper = shallow(<LoginButton clicked={mockCallback}/>);
+        const button = wrapper.find('button');
+        button.prop('onClick')();
         expect(mockCallback.mock.calls.length).toEqual(1);
     })
 

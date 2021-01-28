@@ -1,7 +1,7 @@
 import React from 'react'; 
 import Layout from '../../hoc/Layout/Layout';
 
-function App() {
+export function App() {
   return (
     <div >
       <Layout/>
