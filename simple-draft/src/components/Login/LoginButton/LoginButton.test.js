@@ -26,7 +26,7 @@ describe('<LoginButton />', ()=>{
     //calls props.clicked when button is clicked
     it('should call props.clicked when the button is pressed', () =>{
         const mockCallback = jest.fn();
-        wrapper = shallow(<LoginButton clicked={mockCallback}/>);
+        wrapper.setProps({clicked: mockCallback});
         const button = wrapper.find('button');
         button.prop('onClick')();
         expect(mockCallback.mock.calls.length).toEqual(1);

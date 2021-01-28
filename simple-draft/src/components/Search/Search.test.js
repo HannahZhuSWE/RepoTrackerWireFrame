@@ -6,11 +6,15 @@ import Search from './Search';
 configure({adapter: new Adapter()});
 
 describe('<Search />', ()=>{
-    let wrapper;
-    beforeEach(() =>{
-        wrapper = shallow(<Search />);
-    });
-    //should have a field component
-    //should have a search button
+    
+    //calls props.clicked when search button is clicked
+    it('should call props.clicked when the search button is pressed', () =>{
+        const mockCallback = jest.fn();
+        let wrapper = shallow(<Search clicked={mockCallback}/>);
+        const button = wrapper.find('button');
+        button.prop('onClick')();
+        expect(mockCallback.mock.calls.length).toEqual(1);
+    })
+
 });
 

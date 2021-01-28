@@ -22,5 +22,14 @@ describe('<Backdrop />', ()=>{
     it('should not render backdrop when props.show is false', () => {
         expect(wrapper.find('div')).toHaveLength(0);
     });
+
+    //calls props.clicked when background is clicked
+    it('should call props.clicked when the background is clicked', () =>{
+        const mockCallback = jest.fn();
+        wrapper.setProps({clicked: mockCallback, show: true});
+        const div = wrapper.find('div');
+        div.prop('onClick')();
+        expect(mockCallback.mock.calls.length).toEqual(1);
+    })
 });
 
