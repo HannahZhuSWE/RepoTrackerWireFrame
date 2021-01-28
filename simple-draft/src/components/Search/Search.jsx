@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Search.module.css';
 import Field from '../UI/Field/Field';
+import * as insights from '../../applicationInsights/ApplicationInsights';
 
 //search field and button for entering the github url of an article/repo
 const search = (props) =>{
@@ -13,7 +14,7 @@ const search = (props) =>{
                         value={props.value}
                         type="string"
                         />
-                    <button onClick={props.clicked}>Search</button>
+                    <button onClick={()=>{ props.clicked(); insights.trackEvent()}}>Search</button>
                 </div>
             </div>
     );
