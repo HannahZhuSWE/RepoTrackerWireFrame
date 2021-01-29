@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Search.module.css';
 import Field from '../UI/Field/Field';
-import * as insights from '../../applicationInsights/ApplicationInsights';
+import * as insights from '../../external/applicationInsights/ApplicationInsights';
 
 //search field and button for entering the github url of an article/repo
 const search = (props) =>{

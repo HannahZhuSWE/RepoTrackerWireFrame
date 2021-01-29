@@ -7,7 +7,7 @@ import Search from '../../components/Search/Search';
 import DisplayInfo from '../../components/DisplayInfo/DisplayInfo';
 import LoginPage from '../../containers/LoginPage/LoginPage';
 import classes from './Layout.module.css';
-import * as actionType from '../../store/actions';
+import * as actionCreators from '../../store/actions';
 
 //gives the basic layout of the page
 //keeps track of the value in the search bar and whether or not the login page should appear
@@ -23,11 +23,14 @@ export const Layout = (props) =>{
             <LoginPage show={loginPage} hide={() => setLoginPage(false)}/>
             <main className={classes.Layout}>
                 <Search 
-                    clicked = {()=>{props.onSearch()}}
+                    clicked = {()=>{props.onSearch(searchValue)}}
                     value={searchValue}
                     change={(event) =>{setSearchValue(event.target.value)}}/>
                 <hr/>
-                <DisplayInfo show={props.showResults}/>
+                <DisplayInfo 
+                    show={props.showResults} 
+                    articleData={props.articleData}
+                    repoData={props.repoData}/>
             </main>
             <footer className={classes.Footer}>
                 <p> This page is powered by the Repo Tracker Tool, maintained by Mike Jacobs @
@@ -43,6 +46,8 @@ export const Layout = (props) =>{
 const mapStateToProps = state =>{
     return{
         showResults : state.displayResults.showResults,
+        articleData : state.displayResults.articleData,
+        repoData : state.displayResults.repoData,
         authenticated : state.login.authenticated
     };
 };
@@ -50,7 +55,7 @@ const mapStateToProps = state =>{
 //mapping of actions to props
 const mapDispatchToProps = dispatch =>{
     return {
-        onSearch: () => dispatch({type: actionType.SEARCH})
+        onSearch: () => dispatch(actionCreators.searchAsync())
     };
 };
 
